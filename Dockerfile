@@ -7,5 +7,4 @@ RUN apt-get install mysql-server-5.7 -y
 CMD chown -R mysql:mysql /var/lib/mysql \
     && service mysql start \
     && mysql -uroot -p123456
-
-#docker run -d -it --name broken-container --mount type=bind,source=/f/istio/test,target=/var/log/mysql mysql:latest
+VOLUME /var/log/mysql
